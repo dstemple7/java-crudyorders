@@ -10,5 +10,9 @@ public interface OrderServices
 
     Order save(Order order);
 
+    void delete(long id);
+
+    Order update(Order order, long id);
+
     List<Order> findAdvanceAmount(double advanceamount);
 }
