@@ -2,6 +2,7 @@ package com.lambda.orders.services;
 
 import com.lambda.orders.models.Order;
 import com.lambda.orders.models.Payment;
+import com.lambda.orders.repositories.CustomersRepository;
 import com.lambda.orders.repositories.OrdersRepository;
 import com.lambda.orders.repositories.PaymentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class OrderServicesImpl implements OrderServices
 
     @Autowired
     PaymentsRepository paymentrepos;
+
+    @Autowired
+    CustomersRepository custrepos;
 
     @Override
     public Order findOrderById(long id)

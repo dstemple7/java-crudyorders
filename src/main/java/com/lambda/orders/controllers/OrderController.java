@@ -44,9 +44,9 @@ public class OrderController
         newOrder = orderServices.save(newOrder);
 
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newOrderURI = ServletUriComponentsBuilder.fromCurrentRequestUri()
-            .path("/" + newOrder.getOrdnum())
-            .build()
+        URI newOrderURI = ServletUriComponentsBuilder.fromCurrentRequest()
+            .path("/{orderid}")
+            .buildAndExpand(newOrder.getOrdnum())
             .toUri();
         responseHeaders.setLocation(newOrderURI);
 
